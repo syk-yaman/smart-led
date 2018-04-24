@@ -259,15 +259,6 @@ void blinkAccordingToHourNumber(rtc_t rtc)
 int isActiveTime(rtc_t rtc){
 	if(rtc.weekDay != 5) //Not Friday
 	{
-		//if(rtc.hour >= 0x12 && rtc.hour < 0x06) //11 - 18 /// 11:30 - 5:30
-		//{
-		//return 1;
-		//}
-		//else
-		//{
-		//return 0;/////////////////////////////////////////////////////
-		//}
-
 		if(rtc.hour>=0x11)
 		{
 			if(rtc.min>=0x30)

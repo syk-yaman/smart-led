@@ -90,6 +90,8 @@
 <layer number="111" name="LPC17xx" color="7" fill="1" visible="no" active="yes"/>
 <layer number="112" name="tSilk" color="7" fill="1" visible="no" active="yes"/>
 <layer number="113" name="ReferenceLS" color="7" fill="1" visible="no" active="no"/>
+<layer number="114" name="Badge_Outline" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="115" name="ReferenceISLANDS" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="no" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="no" active="no"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="no" active="yes"/>
@@ -1475,36 +1477,6 @@ diameter 2 mm, horizontal, grid 7.62 mm</description>
 </package>
 </packages>
 </library>
-<library name="battery">
-<description>&lt;b&gt;Lithium Batteries and NC Accus&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="CR2032H">
-<description>&lt;b&gt;LI BATTERY&lt;/b&gt; Varta</description>
-<wire x1="-0.635" y1="8.255" x2="0.635" y2="8.255" width="0.254" layer="21"/>
-<wire x1="0" y1="8.89" x2="0" y2="7.62" width="0.254" layer="21"/>
-<wire x1="-0.635" y1="-8.89" x2="0.635" y2="-8.89" width="0.254" layer="21"/>
-<wire x1="-3.556" y1="11.049" x2="-6.604" y2="11.049" width="0.1524" layer="51"/>
-<wire x1="-6.604" y1="11.049" x2="-6.604" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="6.604" y1="-2.54" x2="6.604" y2="11.049" width="0.1524" layer="21"/>
-<wire x1="-6.604" y1="-2.54" x2="-1.27" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="3.175" x2="-1.27" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="3.175" x2="1.27" y2="3.175" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="-2.54" x2="1.27" y2="3.175" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="-2.54" x2="6.604" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="-6.698" y1="7.5979" x2="10.033" y2="0" width="0.1524" layer="21" curve="227.397154"/>
-<wire x1="3.556" y1="11.049" x2="-3.556" y2="11.049" width="0.1524" layer="21"/>
-<wire x1="6.477" y1="11.049" x2="3.556" y2="11.049" width="0.1524" layer="51"/>
-<wire x1="6.6203" y1="7.6668" x2="10.0331" y2="0" width="0.1524" layer="21" curve="-49.440271"/>
-<pad name="+@1" x="-5.08" y="10.795" drill="1.1176" diameter="2.54" shape="octagon"/>
-<pad name="+" x="5.08" y="10.795" drill="1.1176" diameter="2.54" shape="octagon"/>
-<pad name="-" x="0" y="-6.985" drill="1.1176" diameter="2.54" shape="octagon"/>
-<text x="-2.54" y="11.43" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="5.08" y="-1.905" size="1.27" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
-<text x="-2.921" y="-5.08" size="1.27" layer="21" ratio="10">Lit.3V</text>
-</package>
-</packages>
-</library>
 <library name="v-reg">
 <description>&lt;b&gt;Voltage Regulators&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
@@ -1927,6 +1899,43 @@ Siemens, Hewlett-Packard, Texas Instuments, Sharp, Motorola&lt;p&gt;
 </package>
 </packages>
 </library>
+<library name="SparkFun-Batteries">
+<description>&lt;h3&gt;SparkFun Batteries&lt;/h3&gt;
+This library contains battery clips, connectors, and appropriately sized silk outlines for LiPo batteries. 
+&lt;br&gt;
+&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+&lt;br&gt;
+&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;
+&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="BATTCOM_20MM_PTH">
+<description>&lt;h3&gt;20mm (CR2032) Coin Cell Battery Holder - PTH&lt;/h3&gt;
+&lt;p&gt;Basic 20mm coin cell holder. Posts can be inserted into 0.1" perf board! Holds the common CR2032 type batteries.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.sparkfun.com/datasheets/Prototyping/CoinCellHolder-20mm.pdf"&gt;Datasheet&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;Devices Using&lt;/h4&gt;
+&lt;ul&gt;&lt;li&gt;BATTERY&lt;/li&gt;&lt;/ul&gt;</description>
+<wire x1="10.34" y1="3.8" x2="13.32" y2="3.8" width="0.2032" layer="21"/>
+<wire x1="13.32" y1="3.8" x2="13.32" y2="-3.8" width="0.2032" layer="21"/>
+<wire x1="13.32" y1="-3.8" x2="10.34" y2="-3.8" width="0.2032" layer="21"/>
+<circle x="0.06" y="0.1" radius="10" width="0.127" layer="51"/>
+<pad name="2" x="-8.15" y="0" drill="1.3" rot="R90"/>
+<pad name="1" x="11.85" y="0" drill="1.3" rot="R90"/>
+<text x="8.6" y="-0.7" size="1.27" layer="51">+</text>
+<text x="-6.4" y="-0.7" size="1.27" layer="51">-</text>
+<wire x1="-10.54" y1="3.8" x2="-10.54" y2="-3.8" width="0.2032" layer="21"/>
+<wire x1="10.34" y1="3.8" x2="-10.54" y2="3.8" width="0.2032" layer="21" curve="139.856795"/>
+<wire x1="10.34" y1="-3.8" x2="-10.54" y2="-3.8" width="0.2032" layer="21" curve="-139.856795"/>
+<text x="-10.795" y="0" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center">&gt;NAME</text>
+<text x="0" y="0" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center">&gt;VALUE</text>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -2129,7 +2138,6 @@ design rules under a new name.</description>
 <element name="B1" library="rectifier" package="RB1A" value="" x="42.164" y="92.202" rot="R180"/>
 <element name="C3" library="rcl" package="E2,5-5" value="4.7uf" x="56.642" y="88.9" rot="R270"/>
 <element name="D1" library="diode" package="DO35-7" value="1N4148DO35-7" x="22.098" y="86.36"/>
-<element name="G1" library="battery" package="CR2032H" value="CR2032H" x="8.636" y="42.926"/>
 <element name="IC2" library="adafruit" package="DIL08" value="DS1307" x="56.515" y="40.64" rot="R90"/>
 <element name="IC3" library="atmel" package="DIL28-3" value="MEGA8-P" x="48.26" y="66.548" rot="R180">
 <attribute name="OC_FARNELL" value="unknown" x="48.26" y="66.548" size="1.778" layer="27" rot="R180" display="off"/>
@@ -2221,6 +2229,11 @@ design rules under a new name.</description>
 <element name="JP1" library="pinhead" package="1X05" value="" x="35.306" y="75.692"/>
 <element name="JP2" library="pinhead" package="1X05" value="" x="54.61" y="57.912"/>
 <element name="C1" library="rcl" package="E2,5-5" value="4.7uf" x="73.406" y="34.798" rot="R270"/>
+<element name="C4" library="rcl" package="C025-025X050" value="100nf" x="43.688" y="34.036" rot="R90"/>
+<element name="BT1" library="SparkFun-Batteries" package="BATTCOM_20MM_PTH" value="" x="8.89" y="45.466" rot="R270">
+<attribute name="SF_SKU" value="PRT-00783" x="8.89" y="45.466" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="PROD_ID" value="BATT-09031" x="8.89" y="45.466" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -2228,7 +2241,6 @@ design rules under a new name.</description>
 <contactref element="12V" pad="2"/>
 <contactref element="OK1" pad="3"/>
 <contactref element="IC2" pad="4"/>
-<contactref element="G1" pad="-"/>
 <contactref element="IC3" pad="8"/>
 <contactref element="T1" pad="1"/>
 <contactref element="LED-OUT" pad="1"/>
@@ -2265,6 +2277,8 @@ design rules under a new name.</description>
 <wire x1="68.072" y1="58.42" x2="73.152" y2="58.42" width="0.6096" layer="1"/>
 <via x="73.152" y="58.42" extent="1-16" drill="0.6" shape="square"/>
 <contactref element="C1" pad="-"/>
+<contactref element="C4" pad="1"/>
+<contactref element="BT1" pad="2"/>
 </signal>
 <signal name="AVCC">
 <contactref element="IC3" pad="20"/>
@@ -2435,23 +2449,6 @@ design rules under a new name.</description>
 <wire x1="57.15" y1="51.308" x2="57.15" y2="51.816" width="0.6096" layer="16"/>
 <wire x1="57.15" y1="51.816" x2="59.436" y2="51.816" width="0.6096" layer="16"/>
 <wire x1="59.436" y1="51.816" x2="62.23" y2="54.61" width="0.6096" layer="16"/>
-</signal>
-<signal name="N$18">
-<contactref element="G1" pad="+"/>
-<contactref element="IC2" pad="3"/>
-<wire x1="43.942" y1="37.084" x2="20.574" y2="37.084" width="0.6096" layer="16"/>
-<wire x1="20.574" y1="37.084" x2="19.05" y2="38.608" width="0.6096" layer="16"/>
-<wire x1="19.05" y1="38.608" x2="19.05" y2="48.387" width="0.6096" layer="16"/>
-<wire x1="19.05" y1="48.387" x2="13.716" y2="53.721" width="0.6096" layer="16"/>
-<wire x1="60.325" y1="41.91" x2="59.182" y2="41.91" width="0.6096" layer="16"/>
-<wire x1="59.182" y1="41.91" x2="56.388" y2="39.116" width="0.6096" layer="16"/>
-<wire x1="56.388" y1="39.116" x2="56.388" y2="35.56" width="0.6096" layer="16"/>
-<wire x1="56.388" y1="35.56" x2="55.372" y2="34.544" width="0.6096" layer="16"/>
-<wire x1="55.372" y1="34.544" x2="51.308" y2="34.544" width="0.6096" layer="16"/>
-<via x="51.308" y="34.544" extent="1-16" drill="0.6" shape="square"/>
-<wire x1="51.308" y1="34.544" x2="46.482" y2="34.544" width="1.016" layer="1"/>
-<via x="46.482" y="34.544" extent="1-16" drill="0.6" shape="square"/>
-<wire x1="43.942" y1="37.084" x2="46.482" y2="34.544" width="0.6096" layer="16"/>
 </signal>
 <signal name="N$21">
 <contactref element="Q1" pad="1"/>
@@ -2708,6 +2705,26 @@ design rules under a new name.</description>
 <wire x1="41.91" y1="62.23" x2="41.91" y2="62.738" width="0.6096" layer="16"/>
 <wire x1="49.53" y1="57.912" x2="47.752" y2="59.69" width="0.6096" layer="16"/>
 <wire x1="47.752" y1="59.69" x2="44.45" y2="59.69" width="0.6096" layer="16"/>
+</signal>
+<signal name="N$44">
+<contactref element="C4" pad="2"/>
+<contactref element="IC2" pad="3"/>
+<contactref element="BT1" pad="1"/>
+<wire x1="8.89" y1="33.616" x2="17.36" y2="33.616" width="0.6096" layer="16"/>
+<wire x1="17.36" y1="33.616" x2="21.336" y2="37.592" width="0.6096" layer="16"/>
+<wire x1="21.336" y1="37.592" x2="39.37" y2="37.592" width="0.6096" layer="16"/>
+<wire x1="39.37" y1="37.592" x2="41.656" y2="35.306" width="0.6096" layer="16"/>
+<wire x1="41.656" y1="35.306" x2="43.688" y2="35.306" width="0.6096" layer="16"/>
+<via x="46.228" y="34.544" extent="1-16" drill="0.6" shape="square"/>
+<wire x1="46.228" y1="34.544" x2="51.054" y2="34.544" width="0.6096" layer="1"/>
+<via x="51.054" y="34.544" extent="1-16" drill="0.6" shape="square"/>
+<wire x1="51.054" y1="34.544" x2="55.118" y2="34.544" width="0.6096" layer="16"/>
+<wire x1="55.118" y1="34.544" x2="56.388" y2="35.814" width="0.6096" layer="16"/>
+<wire x1="56.388" y1="35.814" x2="56.388" y2="40.132" width="0.6096" layer="16"/>
+<wire x1="56.388" y1="40.132" x2="58.166" y2="41.91" width="0.6096" layer="16"/>
+<wire x1="58.166" y1="41.91" x2="60.325" y2="41.91" width="0.6096" layer="16"/>
+<wire x1="43.688" y1="35.306" x2="44.45" y2="34.544" width="0.6096" layer="16"/>
+<wire x1="44.45" y1="34.544" x2="46.228" y2="34.544" width="0.6096" layer="16"/>
 </signal>
 </signals>
 <errors>

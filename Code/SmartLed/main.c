@@ -366,8 +366,3 @@ void initPorts(){
 	//PORTD |= (1 << PORTD3);	   // turn On the Pull-up
 	
 }
-
-//PORTB = on;
-//_delay_ms(10000);
-//} else {
-//PORTB = off;

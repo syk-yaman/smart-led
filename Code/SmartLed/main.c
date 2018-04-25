@@ -259,17 +259,11 @@ void blinkAccordingToHourNumber(rtc_t rtc)
 int isActiveTime(rtc_t rtc){
 	if(rtc.weekDay != 5) //Not Friday
 	{
-		if(rtc.hour>=0x11)
+		if(rtc.hour>=0x12)
 		{
-			if(rtc.min>=0x30)
+			if(rtc.hour <= 0x17)
 			{
-				if(rtc.hour <= 0x17)
-				{
-					if(rtc.min <= 0x30)
-					{
-						return 1;
-					}
-				}
+				return 1;
 			}
 		}
 	}
@@ -321,8 +315,8 @@ void changeAutoInidicator(int status){
 }
 
 void setRtcTime(rtc_t rtc){
-	rtc.hour = 0x00; //  10:40:20 am
-	rtc.min =  0x04;
+	rtc.hour = 0x12; //  10:40:20 am
+	rtc.min =  0x02;
 	rtc.sec =  0x00;
 
 	rtc.date = 0x25; //1st Jan 2016

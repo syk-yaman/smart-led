@@ -3,31 +3,31 @@ SmartLed.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000004aa  00000000  00000000  00000094  2**1
+  0 .text         000004a0  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000006  00800060  000004aa  0000053e  2**0
+  1 .data         00000006  00800060  000004a0  00000534  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000004  00800066  00800066  00000544  2**0
+  2 .bss          00000004  00800066  00800066  0000053a  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  00000544  2**0
+  3 .comment      00000030  00000000  00000000  0000053a  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000574  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000056c  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 00000120  00000000  00000000  000005b0  2**0
+  5 .debug_aranges 00000120  00000000  00000000  000005a8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00001123  00000000  00000000  000006d0  2**0
+  6 .debug_info   00001123  00000000  00000000  000006c8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 000009c7  00000000  00000000  000017f3  2**0
+  7 .debug_abbrev 000009c7  00000000  00000000  000017eb  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000008df  00000000  00000000  000021ba  2**0
+  8 .debug_line   000008d9  00000000  00000000  000021b2  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000238  00000000  00000000  00002a9c  2**2
+  9 .debug_frame  00000238  00000000  00000000  00002a8c  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    0000059f  00000000  00000000  00002cd4  2**0
+ 10 .debug_str    0000059b  00000000  00000000  00002cc4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000507  00000000  00000000  00003273  2**0
+ 11 .debug_loc    000004d7  00000000  00000000  0000325f  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 000000e0  00000000  00000000  0000377a  2**0
+ 12 .debug_ranges 000000e0  00000000  00000000  00003736  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -65,7 +65,7 @@ Disassembly of section .text:
   32:	10 e0       	ldi	r17, 0x00	; 0
   34:	a0 e6       	ldi	r26, 0x60	; 96
   36:	b0 e0       	ldi	r27, 0x00	; 0
-  38:	ea ea       	ldi	r30, 0xAA	; 170
+  38:	e0 ea       	ldi	r30, 0xA0	; 160
   3a:	f4 e0       	ldi	r31, 0x04	; 4
   3c:	02 c0       	rjmp	.+4      	; 0x42 <__SREG__+0x3>
   3e:	05 90       	lpm	r0, Z+
@@ -87,8 +87,8 @@ Disassembly of section .text:
   52:	aa 36       	cpi	r26, 0x6A	; 106
   54:	b2 07       	cpc	r27, r18
   56:	e1 f7       	brne	.-8      	; 0x50 <.do_clear_bss_loop>
-  58:	91 d1       	rcall	.+802    	; 0x37c <main>
-  5a:	25 c2       	rjmp	.+1098   	; 0x4a6 <_exit>
+  58:	8c d1       	rcall	.+792    	; 0x372 <main>
+  5a:	20 c2       	rjmp	.+1088   	; 0x49c <_exit>
 
 0000005c <__bad_interrupt>:
   5c:	d1 cf       	rjmp	.-94     	; 0x0 <__vectors>
@@ -439,365 +439,360 @@ uint8_t I2C_Read(uint8_t v_ackOption_u8)
  296:	0f be       	out	0x3f, r0	; 63
  298:	cd bf       	out	0x3d, r28	; 61
  29a:	55 30       	cpi	r21, 0x05	; 5
- 29c:	49 f0       	breq	.+18     	; 0x2b0 <isActiveTime+0x2a>
- 29e:	41 51       	subi	r20, 0x11	; 17
- 2a0:	47 30       	cpi	r20, 0x07	; 7
- 2a2:	48 f4       	brcc	.+18     	; 0x2b6 <isActiveTime+0x30>
- 2a4:	81 e0       	ldi	r24, 0x01	; 1
- 2a6:	90 e0       	ldi	r25, 0x00	; 0
- 2a8:	30 33       	cpi	r19, 0x30	; 48
- 2aa:	39 f0       	breq	.+14     	; 0x2ba <isActiveTime+0x34>
+ 29c:	39 f0       	breq	.+14     	; 0x2ac <isActiveTime+0x26>
+ 29e:	42 51       	subi	r20, 0x12	; 18
+ 2a0:	81 e0       	ldi	r24, 0x01	; 1
+ 2a2:	90 e0       	ldi	r25, 0x00	; 0
+ 2a4:	46 30       	cpi	r20, 0x06	; 6
+ 2a6:	20 f0       	brcs	.+8      	; 0x2b0 <isActiveTime+0x2a>
+ 2a8:	80 e0       	ldi	r24, 0x00	; 0
+ 2aa:	02 c0       	rjmp	.+4      	; 0x2b0 <isActiveTime+0x2a>
  2ac:	80 e0       	ldi	r24, 0x00	; 0
- 2ae:	05 c0       	rjmp	.+10     	; 0x2ba <isActiveTime+0x34>
- 2b0:	80 e0       	ldi	r24, 0x00	; 0
- 2b2:	90 e0       	ldi	r25, 0x00	; 0
- 2b4:	02 c0       	rjmp	.+4      	; 0x2ba <isActiveTime+0x34>
- 2b6:	80 e0       	ldi	r24, 0x00	; 0
- 2b8:	90 e0       	ldi	r25, 0x00	; 0
- 2ba:	27 96       	adiw	r28, 0x07	; 7
- 2bc:	0f b6       	in	r0, 0x3f	; 63
- 2be:	f8 94       	cli
- 2c0:	de bf       	out	0x3e, r29	; 62
- 2c2:	0f be       	out	0x3f, r0	; 63
- 2c4:	cd bf       	out	0x3d, r28	; 61
- 2c6:	df 91       	pop	r29
- 2c8:	cf 91       	pop	r28
- 2ca:	08 95       	ret
+ 2ae:	90 e0       	ldi	r25, 0x00	; 0
+ 2b0:	27 96       	adiw	r28, 0x07	; 7
+ 2b2:	0f b6       	in	r0, 0x3f	; 63
+ 2b4:	f8 94       	cli
+ 2b6:	de bf       	out	0x3e, r29	; 62
+ 2b8:	0f be       	out	0x3f, r0	; 63
+ 2ba:	cd bf       	out	0x3d, r28	; 61
+ 2bc:	df 91       	pop	r29
+ 2be:	cf 91       	pop	r28
+ 2c0:	08 95       	ret
 
-000002cc <changeOutputLedStatus>:
- 2cc:	01 97       	sbiw	r24, 0x01	; 1
- 2ce:	11 f4       	brne	.+4      	; 0x2d4 <changeOutputLedStatus+0x8>
- 2d0:	c0 9a       	sbi	0x18, 0	; 24
- 2d2:	08 95       	ret
- 2d4:	c0 98       	cbi	0x18, 0	; 24
- 2d6:	08 95       	ret
+000002c2 <changeOutputLedStatus>:
+ 2c2:	01 97       	sbiw	r24, 0x01	; 1
+ 2c4:	11 f4       	brne	.+4      	; 0x2ca <changeOutputLedStatus+0x8>
+ 2c6:	c0 9a       	sbi	0x18, 0	; 24
+ 2c8:	08 95       	ret
+ 2ca:	c0 98       	cbi	0x18, 0	; 24
+ 2cc:	08 95       	ret
 
-000002d8 <checkOnButton>:
- 2d8:	82 99       	sbic	0x10, 2	; 16
- 2da:	0e c0       	rjmp	.+28     	; 0x2f8 <checkOnButton+0x20>
- 2dc:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <turnOnButtonStatus>
- 2e0:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <turnOnButtonStatus+0x1>
- 2e4:	01 97       	sbiw	r24, 0x01	; 1
- 2e6:	a1 f4       	brne	.+40     	; 0x310 <checkOnButton+0x38>
- 2e8:	10 92 63 00 	sts	0x0063, r1	; 0x800063 <turnOnButtonStatus+0x1>
- 2ec:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <turnOnButtonStatus>
- 2f0:	81 e0       	ldi	r24, 0x01	; 1
- 2f2:	90 e0       	ldi	r25, 0x00	; 0
- 2f4:	eb df       	rcall	.-42     	; 0x2cc <changeOutputLedStatus>
- 2f6:	08 95       	ret
- 2f8:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <turnOnButtonStatus>
- 2fc:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <turnOnButtonStatus+0x1>
- 300:	89 2b       	or	r24, r25
- 302:	31 f4       	brne	.+12     	; 0x310 <checkOnButton+0x38>
- 304:	81 e0       	ldi	r24, 0x01	; 1
- 306:	90 e0       	ldi	r25, 0x00	; 0
- 308:	90 93 63 00 	sts	0x0063, r25	; 0x800063 <turnOnButtonStatus+0x1>
- 30c:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <turnOnButtonStatus>
- 310:	08 95       	ret
+000002ce <checkOnButton>:
+ 2ce:	82 99       	sbic	0x10, 2	; 16
+ 2d0:	0e c0       	rjmp	.+28     	; 0x2ee <checkOnButton+0x20>
+ 2d2:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <turnOnButtonStatus>
+ 2d6:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <turnOnButtonStatus+0x1>
+ 2da:	01 97       	sbiw	r24, 0x01	; 1
+ 2dc:	a1 f4       	brne	.+40     	; 0x306 <checkOnButton+0x38>
+ 2de:	10 92 63 00 	sts	0x0063, r1	; 0x800063 <turnOnButtonStatus+0x1>
+ 2e2:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <turnOnButtonStatus>
+ 2e6:	81 e0       	ldi	r24, 0x01	; 1
+ 2e8:	90 e0       	ldi	r25, 0x00	; 0
+ 2ea:	eb df       	rcall	.-42     	; 0x2c2 <changeOutputLedStatus>
+ 2ec:	08 95       	ret
+ 2ee:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <turnOnButtonStatus>
+ 2f2:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <turnOnButtonStatus+0x1>
+ 2f6:	89 2b       	or	r24, r25
+ 2f8:	31 f4       	brne	.+12     	; 0x306 <checkOnButton+0x38>
+ 2fa:	81 e0       	ldi	r24, 0x01	; 1
+ 2fc:	90 e0       	ldi	r25, 0x00	; 0
+ 2fe:	90 93 63 00 	sts	0x0063, r25	; 0x800063 <turnOnButtonStatus+0x1>
+ 302:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <turnOnButtonStatus>
+ 306:	08 95       	ret
 
-00000312 <checkOffButton>:
- 312:	83 99       	sbic	0x10, 3	; 16
- 314:	0e c0       	rjmp	.+28     	; 0x332 <checkOffButton+0x20>
- 316:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <turnOnButtonStatus>
- 31a:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <turnOnButtonStatus+0x1>
- 31e:	01 97       	sbiw	r24, 0x01	; 1
- 320:	a1 f4       	brne	.+40     	; 0x34a <checkOffButton+0x38>
- 322:	10 92 63 00 	sts	0x0063, r1	; 0x800063 <turnOnButtonStatus+0x1>
- 326:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <turnOnButtonStatus>
- 32a:	80 e0       	ldi	r24, 0x00	; 0
- 32c:	90 e0       	ldi	r25, 0x00	; 0
- 32e:	ce df       	rcall	.-100    	; 0x2cc <changeOutputLedStatus>
- 330:	08 95       	ret
- 332:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <turnOnButtonStatus>
- 336:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <turnOnButtonStatus+0x1>
- 33a:	89 2b       	or	r24, r25
- 33c:	31 f4       	brne	.+12     	; 0x34a <checkOffButton+0x38>
- 33e:	81 e0       	ldi	r24, 0x01	; 1
- 340:	90 e0       	ldi	r25, 0x00	; 0
- 342:	90 93 63 00 	sts	0x0063, r25	; 0x800063 <turnOnButtonStatus+0x1>
- 346:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <turnOnButtonStatus>
- 34a:	08 95       	ret
+00000308 <checkOffButton>:
+ 308:	83 99       	sbic	0x10, 3	; 16
+ 30a:	0e c0       	rjmp	.+28     	; 0x328 <checkOffButton+0x20>
+ 30c:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <turnOnButtonStatus>
+ 310:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <turnOnButtonStatus+0x1>
+ 314:	01 97       	sbiw	r24, 0x01	; 1
+ 316:	a1 f4       	brne	.+40     	; 0x340 <checkOffButton+0x38>
+ 318:	10 92 63 00 	sts	0x0063, r1	; 0x800063 <turnOnButtonStatus+0x1>
+ 31c:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <turnOnButtonStatus>
+ 320:	80 e0       	ldi	r24, 0x00	; 0
+ 322:	90 e0       	ldi	r25, 0x00	; 0
+ 324:	ce df       	rcall	.-100    	; 0x2c2 <changeOutputLedStatus>
+ 326:	08 95       	ret
+ 328:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <turnOnButtonStatus>
+ 32c:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <turnOnButtonStatus+0x1>
+ 330:	89 2b       	or	r24, r25
+ 332:	31 f4       	brne	.+12     	; 0x340 <checkOffButton+0x38>
+ 334:	81 e0       	ldi	r24, 0x01	; 1
+ 336:	90 e0       	ldi	r25, 0x00	; 0
+ 338:	90 93 63 00 	sts	0x0063, r25	; 0x800063 <turnOnButtonStatus+0x1>
+ 33c:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <turnOnButtonStatus>
+ 340:	08 95       	ret
 
-0000034c <changeElectricityInidicator>:
- 34c:	01 97       	sbiw	r24, 0x01	; 1
- 34e:	11 f4       	brne	.+4      	; 0x354 <changeElectricityInidicator+0x8>
- 350:	c1 9a       	sbi	0x18, 1	; 24
- 352:	08 95       	ret
- 354:	c1 98       	cbi	0x18, 1	; 24
- 356:	08 95       	ret
+00000342 <changeElectricityInidicator>:
+ 342:	01 97       	sbiw	r24, 0x01	; 1
+ 344:	11 f4       	brne	.+4      	; 0x34a <changeElectricityInidicator+0x8>
+ 346:	c1 9a       	sbi	0x18, 1	; 24
+ 348:	08 95       	ret
+ 34a:	c1 98       	cbi	0x18, 1	; 24
+ 34c:	08 95       	ret
 
-00000358 <changeTimeInidicator>:
- 358:	01 97       	sbiw	r24, 0x01	; 1
- 35a:	11 f4       	brne	.+4      	; 0x360 <changeTimeInidicator+0x8>
- 35c:	c2 9a       	sbi	0x18, 2	; 24
- 35e:	08 95       	ret
- 360:	c2 98       	cbi	0x18, 2	; 24
- 362:	08 95       	ret
+0000034e <changeTimeInidicator>:
+ 34e:	01 97       	sbiw	r24, 0x01	; 1
+ 350:	11 f4       	brne	.+4      	; 0x356 <changeTimeInidicator+0x8>
+ 352:	c2 9a       	sbi	0x18, 2	; 24
+ 354:	08 95       	ret
+ 356:	c2 98       	cbi	0x18, 2	; 24
+ 358:	08 95       	ret
 
-00000364 <changeAutoInidicator>:
- 364:	01 97       	sbiw	r24, 0x01	; 1
- 366:	11 f4       	brne	.+4      	; 0x36c <changeAutoInidicator+0x8>
- 368:	c3 9a       	sbi	0x18, 3	; 24
- 36a:	08 95       	ret
- 36c:	c3 98       	cbi	0x18, 3	; 24
- 36e:	08 95       	ret
+0000035a <changeAutoInidicator>:
+ 35a:	01 97       	sbiw	r24, 0x01	; 1
+ 35c:	11 f4       	brne	.+4      	; 0x362 <changeAutoInidicator+0x8>
+ 35e:	c3 9a       	sbi	0x18, 3	; 24
+ 360:	08 95       	ret
+ 362:	c3 98       	cbi	0x18, 3	; 24
+ 364:	08 95       	ret
 
-00000370 <initPorts>:
+00000366 <initPorts>:
 
 void initPorts(){
 	DDRD = 0x00; // Set PORT D to input
- 370:	11 ba       	out	0x11, r1	; 17
+ 366:	11 ba       	out	0x11, r1	; 17
 	DDRB = 0xFF; // Set PORT B to output
- 372:	8f ef       	ldi	r24, 0xFF	; 255
- 374:	87 bb       	out	0x17, r24	; 23
+ 368:	8f ef       	ldi	r24, 0xFF	; 255
+ 36a:	87 bb       	out	0x17, r24	; 23
 
 	PORTD = 0b11111110; //enable pull-ups
- 376:	8e ef       	ldi	r24, 0xFE	; 254
- 378:	82 bb       	out	0x12, r24	; 18
- 37a:	08 95       	ret
+ 36c:	8e ef       	ldi	r24, 0xFE	; 254
+ 36e:	82 bb       	out	0x12, r24	; 18
+ 370:	08 95       	ret
 
-0000037c <main>:
+00000372 <main>:
 
 //Variables
 int isManualControl = 0;
 
 int main()
 {
- 37c:	cf 93       	push	r28
- 37e:	df 93       	push	r29
- 380:	cd b7       	in	r28, 0x3d	; 61
- 382:	de b7       	in	r29, 0x3e	; 62
- 384:	27 97       	sbiw	r28, 0x07	; 7
- 386:	0f b6       	in	r0, 0x3f	; 63
- 388:	f8 94       	cli
- 38a:	de bf       	out	0x3e, r29	; 62
- 38c:	0f be       	out	0x3f, r0	; 63
- 38e:	cd bf       	out	0x3d, r28	; 61
+ 372:	cf 93       	push	r28
+ 374:	df 93       	push	r29
+ 376:	cd b7       	in	r28, 0x3d	; 61
+ 378:	de b7       	in	r29, 0x3e	; 62
+ 37a:	27 97       	sbiw	r28, 0x07	; 7
+ 37c:	0f b6       	in	r0, 0x3f	; 63
+ 37e:	f8 94       	cli
+ 380:	de bf       	out	0x3e, r29	; 62
+ 382:	0f be       	out	0x3f, r0	; 63
+ 384:	cd bf       	out	0x3d, r28	; 61
 	OSCCAL=0xFF;
- 390:	8f ef       	ldi	r24, 0xFF	; 255
- 392:	81 bf       	out	0x31, r24	; 49
+ 386:	8f ef       	ldi	r24, 0xFF	; 255
+ 388:	81 bf       	out	0x31, r24	; 49
 	rtc_t rtc;
 	RTC_Init();
- 394:	59 d0       	rcall	.+178    	; 0x448 <RTC_Init>
+ 38a:	59 d0       	rcall	.+178    	; 0x43e <RTC_Init>
 	initPorts();
- 396:	ec df       	rcall	.-40     	; 0x370 <initPorts>
+ 38c:	ec df       	rcall	.-40     	; 0x366 <initPorts>
 	//setRtcTime(rtc);
 	
 	while(1)
 	{
 		RTC_GetDateTime(&rtc);
- 398:	ce 01       	movw	r24, r28
- 39a:	01 96       	adiw	r24, 0x01	; 1
- 39c:	5f d0       	rcall	.+190    	; 0x45c <RTC_GetDateTime>
+ 38e:	ce 01       	movw	r24, r28
+ 390:	01 96       	adiw	r24, 0x01	; 1
+ 392:	5f d0       	rcall	.+190    	; 0x452 <RTC_GetDateTime>
 		checkShowTimeButton(rtc);
- 39e:	29 81       	ldd	r18, Y+1	; 0x01
- 3a0:	3a 81       	ldd	r19, Y+2	; 0x02
- 3a2:	4b 81       	ldd	r20, Y+3	; 0x03
- 3a4:	5c 81       	ldd	r21, Y+4	; 0x04
- 3a6:	6d 81       	ldd	r22, Y+5	; 0x05
- 3a8:	7e 81       	ldd	r23, Y+6	; 0x06
- 3aa:	8f 81       	ldd	r24, Y+7	; 0x07
- 3ac:	37 df       	rcall	.-402    	; 0x21c <checkShowTimeButton>
+ 394:	29 81       	ldd	r18, Y+1	; 0x01
+ 396:	3a 81       	ldd	r19, Y+2	; 0x02
+ 398:	4b 81       	ldd	r20, Y+3	; 0x03
+ 39a:	5c 81       	ldd	r21, Y+4	; 0x04
+ 39c:	6d 81       	ldd	r22, Y+5	; 0x05
+ 39e:	7e 81       	ldd	r23, Y+6	; 0x06
+ 3a0:	8f 81       	ldd	r24, Y+7	; 0x07
+ 3a2:	3c df       	rcall	.-392    	; 0x21c <checkShowTimeButton>
 
 		checkManualButton();
- 3ae:	81 de       	rcall	.-766    	; 0xb2 <checkManualButton>
+ 3a4:	86 de       	rcall	.-756    	; 0xb2 <checkManualButton>
 		checkElectricityStatus();
- 3b0:	ab de       	rcall	.-682    	; 0x108 <checkElectricityStatus>
+ 3a6:	b0 de       	rcall	.-672    	; 0x108 <checkElectricityStatus>
 
 		if(isManualControl == 1){
- 3b2:	80 91 66 00 	lds	r24, 0x0066	; 0x800066 <__data_end>
- 3b6:	90 91 67 00 	lds	r25, 0x0067	; 0x800067 <__data_end+0x1>
- 3ba:	01 97       	sbiw	r24, 0x01	; 1
- 3bc:	21 f4       	brne	.+8      	; 0x3c6 <main+0x4a>
+ 3a8:	80 91 66 00 	lds	r24, 0x0066	; 0x800066 <__data_end>
+ 3ac:	90 91 67 00 	lds	r25, 0x0067	; 0x800067 <__data_end+0x1>
+ 3b0:	01 97       	sbiw	r24, 0x01	; 1
+ 3b2:	21 f4       	brne	.+8      	; 0x3bc <main+0x4a>
 			changeAutoInidicator(1);
- 3be:	81 e0       	ldi	r24, 0x01	; 1
- 3c0:	90 e0       	ldi	r25, 0x00	; 0
- 3c2:	d0 df       	rcall	.-96     	; 0x364 <changeAutoInidicator>
- 3c4:	03 c0       	rjmp	.+6      	; 0x3cc <main+0x50>
+ 3b4:	81 e0       	ldi	r24, 0x01	; 1
+ 3b6:	90 e0       	ldi	r25, 0x00	; 0
+ 3b8:	d0 df       	rcall	.-96     	; 0x35a <changeAutoInidicator>
+ 3ba:	03 c0       	rjmp	.+6      	; 0x3c2 <main+0x50>
 			} else {
 			changeAutoInidicator(0);
- 3c6:	80 e0       	ldi	r24, 0x00	; 0
- 3c8:	90 e0       	ldi	r25, 0x00	; 0
- 3ca:	cc df       	rcall	.-104    	; 0x364 <changeAutoInidicator>
+ 3bc:	80 e0       	ldi	r24, 0x00	; 0
+ 3be:	90 e0       	ldi	r25, 0x00	; 0
+ 3c0:	cc df       	rcall	.-104    	; 0x35a <changeAutoInidicator>
 		}
 
 		if(isManualControl == 0)
- 3cc:	80 91 66 00 	lds	r24, 0x0066	; 0x800066 <__data_end>
- 3d0:	90 91 67 00 	lds	r25, 0x0067	; 0x800067 <__data_end+0x1>
- 3d4:	89 2b       	or	r24, r25
- 3d6:	41 f5       	brne	.+80     	; 0x428 <__LOCK_REGION_LENGTH__+0x28>
+ 3c2:	80 91 66 00 	lds	r24, 0x0066	; 0x800066 <__data_end>
+ 3c6:	90 91 67 00 	lds	r25, 0x0067	; 0x800067 <__data_end+0x1>
+ 3ca:	89 2b       	or	r24, r25
+ 3cc:	41 f5       	brne	.+80     	; 0x41e <__LOCK_REGION_LENGTH__+0x1e>
 		{
 			if(isActiveTime(rtc) == 1)
- 3d8:	29 81       	ldd	r18, Y+1	; 0x01
- 3da:	3a 81       	ldd	r19, Y+2	; 0x02
- 3dc:	4b 81       	ldd	r20, Y+3	; 0x03
- 3de:	5c 81       	ldd	r21, Y+4	; 0x04
- 3e0:	6d 81       	ldd	r22, Y+5	; 0x05
- 3e2:	7e 81       	ldd	r23, Y+6	; 0x06
- 3e4:	8f 81       	ldd	r24, Y+7	; 0x07
- 3e6:	4f df       	rcall	.-354    	; 0x286 <isActiveTime>
- 3e8:	01 97       	sbiw	r24, 0x01	; 1
- 3ea:	b9 f4       	brne	.+46     	; 0x41a <__LOCK_REGION_LENGTH__+0x1a>
+ 3ce:	29 81       	ldd	r18, Y+1	; 0x01
+ 3d0:	3a 81       	ldd	r19, Y+2	; 0x02
+ 3d2:	4b 81       	ldd	r20, Y+3	; 0x03
+ 3d4:	5c 81       	ldd	r21, Y+4	; 0x04
+ 3d6:	6d 81       	ldd	r22, Y+5	; 0x05
+ 3d8:	7e 81       	ldd	r23, Y+6	; 0x06
+ 3da:	8f 81       	ldd	r24, Y+7	; 0x07
+ 3dc:	54 df       	rcall	.-344    	; 0x286 <isActiveTime>
+ 3de:	01 97       	sbiw	r24, 0x01	; 1
+ 3e0:	b9 f4       	brne	.+46     	; 0x410 <__LOCK_REGION_LENGTH__+0x10>
 			{
 				changeTimeInidicator(1);
- 3ec:	81 e0       	ldi	r24, 0x01	; 1
- 3ee:	90 e0       	ldi	r25, 0x00	; 0
- 3f0:	b3 df       	rcall	.-154    	; 0x358 <changeTimeInidicator>
+ 3e2:	81 e0       	ldi	r24, 0x01	; 1
+ 3e4:	90 e0       	ldi	r25, 0x00	; 0
+ 3e6:	b3 df       	rcall	.-154    	; 0x34e <changeTimeInidicator>
 				if(electricityStatus==1)
- 3f2:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <electricityStatus>
- 3f6:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <electricityStatus+0x1>
- 3fa:	01 97       	sbiw	r24, 0x01	; 1
- 3fc:	39 f4       	brne	.+14     	; 0x40c <__LOCK_REGION_LENGTH__+0xc>
+ 3e8:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <electricityStatus>
+ 3ec:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <electricityStatus+0x1>
+ 3f0:	01 97       	sbiw	r24, 0x01	; 1
+ 3f2:	39 f4       	brne	.+14     	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
 				{
 					changeOutputLedStatus(0);
- 3fe:	80 e0       	ldi	r24, 0x00	; 0
- 400:	90 e0       	ldi	r25, 0x00	; 0
- 402:	64 df       	rcall	.-312    	; 0x2cc <changeOutputLedStatus>
+ 3f4:	80 e0       	ldi	r24, 0x00	; 0
+ 3f6:	90 e0       	ldi	r25, 0x00	; 0
+ 3f8:	64 df       	rcall	.-312    	; 0x2c2 <changeOutputLedStatus>
 					changeElectricityInidicator(1);
- 404:	81 e0       	ldi	r24, 0x01	; 1
- 406:	90 e0       	ldi	r25, 0x00	; 0
- 408:	a1 df       	rcall	.-190    	; 0x34c <changeElectricityInidicator>
- 40a:	10 c0       	rjmp	.+32     	; 0x42c <__LOCK_REGION_LENGTH__+0x2c>
+ 3fa:	81 e0       	ldi	r24, 0x01	; 1
+ 3fc:	90 e0       	ldi	r25, 0x00	; 0
+ 3fe:	a1 df       	rcall	.-190    	; 0x342 <changeElectricityInidicator>
+ 400:	10 c0       	rjmp	.+32     	; 0x422 <__LOCK_REGION_LENGTH__+0x22>
 				}
 				else
 				{
 					changeOutputLedStatus(1);
- 40c:	81 e0       	ldi	r24, 0x01	; 1
- 40e:	90 e0       	ldi	r25, 0x00	; 0
- 410:	5d df       	rcall	.-326    	; 0x2cc <changeOutputLedStatus>
+ 402:	81 e0       	ldi	r24, 0x01	; 1
+ 404:	90 e0       	ldi	r25, 0x00	; 0
+ 406:	5d df       	rcall	.-326    	; 0x2c2 <changeOutputLedStatus>
 					changeElectricityInidicator(0);
- 412:	80 e0       	ldi	r24, 0x00	; 0
- 414:	90 e0       	ldi	r25, 0x00	; 0
- 416:	9a df       	rcall	.-204    	; 0x34c <changeElectricityInidicator>
- 418:	09 c0       	rjmp	.+18     	; 0x42c <__LOCK_REGION_LENGTH__+0x2c>
+ 408:	80 e0       	ldi	r24, 0x00	; 0
+ 40a:	90 e0       	ldi	r25, 0x00	; 0
+ 40c:	9a df       	rcall	.-204    	; 0x342 <changeElectricityInidicator>
+ 40e:	09 c0       	rjmp	.+18     	; 0x422 <__LOCK_REGION_LENGTH__+0x22>
 				}
 			}
 			else
 			{
 				changeTimeInidicator(0);
- 41a:	80 e0       	ldi	r24, 0x00	; 0
- 41c:	90 e0       	ldi	r25, 0x00	; 0
- 41e:	9c df       	rcall	.-200    	; 0x358 <changeTimeInidicator>
+ 410:	80 e0       	ldi	r24, 0x00	; 0
+ 412:	90 e0       	ldi	r25, 0x00	; 0
+ 414:	9c df       	rcall	.-200    	; 0x34e <changeTimeInidicator>
 				changeOutputLedStatus(0);
- 420:	80 e0       	ldi	r24, 0x00	; 0
- 422:	90 e0       	ldi	r25, 0x00	; 0
- 424:	53 df       	rcall	.-346    	; 0x2cc <changeOutputLedStatus>
- 426:	02 c0       	rjmp	.+4      	; 0x42c <__LOCK_REGION_LENGTH__+0x2c>
+ 416:	80 e0       	ldi	r24, 0x00	; 0
+ 418:	90 e0       	ldi	r25, 0x00	; 0
+ 41a:	53 df       	rcall	.-346    	; 0x2c2 <changeOutputLedStatus>
+ 41c:	02 c0       	rjmp	.+4      	; 0x422 <__LOCK_REGION_LENGTH__+0x22>
 			}
 		}
 		else
 		{
 			checkOnButton();
- 428:	57 df       	rcall	.-338    	; 0x2d8 <checkOnButton>
+ 41e:	57 df       	rcall	.-338    	; 0x2ce <checkOnButton>
 			checkOffButton();
- 42a:	73 df       	rcall	.-282    	; 0x312 <checkOffButton>
+ 420:	73 df       	rcall	.-282    	; 0x308 <checkOffButton>
 		}
 
 		if(electricityStatus==1)
- 42c:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <electricityStatus>
- 430:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <electricityStatus+0x1>
- 434:	01 97       	sbiw	r24, 0x01	; 1
- 436:	21 f4       	brne	.+8      	; 0x440 <__LOCK_REGION_LENGTH__+0x40>
+ 422:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <electricityStatus>
+ 426:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <electricityStatus+0x1>
+ 42a:	01 97       	sbiw	r24, 0x01	; 1
+ 42c:	21 f4       	brne	.+8      	; 0x436 <__LOCK_REGION_LENGTH__+0x36>
 		{
 			changeElectricityInidicator(1);
- 438:	81 e0       	ldi	r24, 0x01	; 1
- 43a:	90 e0       	ldi	r25, 0x00	; 0
- 43c:	87 df       	rcall	.-242    	; 0x34c <changeElectricityInidicator>
- 43e:	ac cf       	rjmp	.-168    	; 0x398 <main+0x1c>
+ 42e:	81 e0       	ldi	r24, 0x01	; 1
+ 430:	90 e0       	ldi	r25, 0x00	; 0
+ 432:	87 df       	rcall	.-242    	; 0x342 <changeElectricityInidicator>
+ 434:	ac cf       	rjmp	.-168    	; 0x38e <main+0x1c>
 		}
 		else
 		{
 			changeElectricityInidicator(0);
- 440:	80 e0       	ldi	r24, 0x00	; 0
- 442:	90 e0       	ldi	r25, 0x00	; 0
- 444:	83 df       	rcall	.-250    	; 0x34c <changeElectricityInidicator>
- 446:	a8 cf       	rjmp	.-176    	; 0x398 <main+0x1c>
+ 436:	80 e0       	ldi	r24, 0x00	; 0
+ 438:	90 e0       	ldi	r25, 0x00	; 0
+ 43a:	83 df       	rcall	.-250    	; 0x342 <changeElectricityInidicator>
+ 43c:	a8 cf       	rjmp	.-176    	; 0x38e <main+0x1c>
 
-00000448 <RTC_Init>:
+0000043e <RTC_Init>:
     I2C_Write(rtc->date);                    // Write date on RAM address 04H
     I2C_Write(rtc->month);                    // Write month on RAM address 05H
     I2C_Write(rtc->year);                    // Write year on RAM address 06h
 
     I2C_Stop();                              // Stop I2C communication after Setting the Date
 }
- 448:	10 de       	rcall	.-992    	; 0x6a <I2C_Init>
- 44a:	15 de       	rcall	.-982    	; 0x76 <I2C_Start>
- 44c:	80 ed       	ldi	r24, 0xD0	; 208
- 44e:	1f de       	rcall	.-962    	; 0x8e <I2C_Write>
- 450:	87 e0       	ldi	r24, 0x07	; 7
- 452:	1d de       	rcall	.-966    	; 0x8e <I2C_Write>
- 454:	80 e0       	ldi	r24, 0x00	; 0
- 456:	1b de       	rcall	.-970    	; 0x8e <I2C_Write>
- 458:	14 de       	rcall	.-984    	; 0x82 <I2C_Stop>
- 45a:	08 95       	ret
+ 43e:	15 de       	rcall	.-982    	; 0x6a <I2C_Init>
+ 440:	1a de       	rcall	.-972    	; 0x76 <I2C_Start>
+ 442:	80 ed       	ldi	r24, 0xD0	; 208
+ 444:	24 de       	rcall	.-952    	; 0x8e <I2C_Write>
+ 446:	87 e0       	ldi	r24, 0x07	; 7
+ 448:	22 de       	rcall	.-956    	; 0x8e <I2C_Write>
+ 44a:	80 e0       	ldi	r24, 0x00	; 0
+ 44c:	20 de       	rcall	.-960    	; 0x8e <I2C_Write>
+ 44e:	19 de       	rcall	.-974    	; 0x82 <I2C_Stop>
+ 450:	08 95       	ret
 
-0000045c <RTC_GetDateTime>:
+00000452 <RTC_GetDateTime>:
     Note: The date and time read from Ds1307 will be of BCD format, 
           like 0x12,0x39,0x26 for 12hr,39min and 26sec.    
                0x15,0x08,0x47 for 15th day,8th month and 47th year.              
 ***************************************************************************************************/
 void RTC_GetDateTime(rtc_t *rtc)
 {
- 45c:	cf 93       	push	r28
- 45e:	df 93       	push	r29
- 460:	ec 01       	movw	r28, r24
+ 452:	cf 93       	push	r28
+ 454:	df 93       	push	r29
+ 456:	ec 01       	movw	r28, r24
     I2C_Start();                            // Start I2C communication
- 462:	09 de       	rcall	.-1006   	; 0x76 <I2C_Start>
+ 458:	0e de       	rcall	.-996    	; 0x76 <I2C_Start>
 
     I2C_Write(C_Ds1307WriteMode_U8);        // connect to DS1307 by sending its ID on I2c Bus
- 464:	80 ed       	ldi	r24, 0xD0	; 208
- 466:	13 de       	rcall	.-986    	; 0x8e <I2C_Write>
+ 45a:	80 ed       	ldi	r24, 0xD0	; 208
+ 45c:	18 de       	rcall	.-976    	; 0x8e <I2C_Write>
     I2C_Write(C_Ds1307SecondRegAddress_U8); // Request Sec RAM address at 00H
- 468:	80 e0       	ldi	r24, 0x00	; 0
- 46a:	11 de       	rcall	.-990    	; 0x8e <I2C_Write>
+ 45e:	80 e0       	ldi	r24, 0x00	; 0
+ 460:	16 de       	rcall	.-980    	; 0x8e <I2C_Write>
 
     I2C_Stop();                                // Stop I2C communication after selecting Sec Register
- 46c:	0a de       	rcall	.-1004   	; 0x82 <I2C_Stop>
+ 462:	0f de       	rcall	.-994    	; 0x82 <I2C_Stop>
 
     I2C_Start();                            // Start I2C communication
- 46e:	03 de       	rcall	.-1018   	; 0x76 <I2C_Start>
+ 464:	08 de       	rcall	.-1008   	; 0x76 <I2C_Start>
     I2C_Write(C_Ds1307ReadMode_U8);            // connect to DS1307(Read mode) by sending its ID
- 470:	81 ed       	ldi	r24, 0xD1	; 209
- 472:	0d de       	rcall	.-998    	; 0x8e <I2C_Write>
+ 466:	81 ed       	ldi	r24, 0xD1	; 209
+ 468:	12 de       	rcall	.-988    	; 0x8e <I2C_Write>
 
     rtc->sec = I2C_Read(1);                // read second and return Positive ACK
- 474:	81 e0       	ldi	r24, 0x01	; 1
- 476:	12 de       	rcall	.-988    	; 0x9c <I2C_Read>
- 478:	88 83       	st	Y, r24
+ 46a:	81 e0       	ldi	r24, 0x01	; 1
+ 46c:	17 de       	rcall	.-978    	; 0x9c <I2C_Read>
+ 46e:	88 83       	st	Y, r24
     rtc->min = I2C_Read(1);                 // read minute and return Positive ACK
- 47a:	81 e0       	ldi	r24, 0x01	; 1
- 47c:	0f de       	rcall	.-994    	; 0x9c <I2C_Read>
- 47e:	89 83       	std	Y+1, r24	; 0x01
+ 470:	81 e0       	ldi	r24, 0x01	; 1
+ 472:	14 de       	rcall	.-984    	; 0x9c <I2C_Read>
+ 474:	89 83       	std	Y+1, r24	; 0x01
     rtc->hour= I2C_Read(1);               // read hour and return Negative/No ACK
- 480:	81 e0       	ldi	r24, 0x01	; 1
- 482:	0c de       	rcall	.-1000   	; 0x9c <I2C_Read>
- 484:	8a 83       	std	Y+2, r24	; 0x02
+ 476:	81 e0       	ldi	r24, 0x01	; 1
+ 478:	11 de       	rcall	.-990    	; 0x9c <I2C_Read>
+ 47a:	8a 83       	std	Y+2, r24	; 0x02
     rtc->weekDay = I2C_Read(1);           // read weekDay and return Positive ACK
- 486:	81 e0       	ldi	r24, 0x01	; 1
- 488:	09 de       	rcall	.-1006   	; 0x9c <I2C_Read>
- 48a:	8b 83       	std	Y+3, r24	; 0x03
+ 47c:	81 e0       	ldi	r24, 0x01	; 1
+ 47e:	0e de       	rcall	.-996    	; 0x9c <I2C_Read>
+ 480:	8b 83       	std	Y+3, r24	; 0x03
     rtc->date= I2C_Read(1);              // read Date and return Positive ACK
- 48c:	81 e0       	ldi	r24, 0x01	; 1
- 48e:	06 de       	rcall	.-1012   	; 0x9c <I2C_Read>
- 490:	8c 83       	std	Y+4, r24	; 0x04
+ 482:	81 e0       	ldi	r24, 0x01	; 1
+ 484:	0b de       	rcall	.-1002   	; 0x9c <I2C_Read>
+ 486:	8c 83       	std	Y+4, r24	; 0x04
     rtc->month=I2C_Read(1);            // read Month and return Positive ACK
- 492:	81 e0       	ldi	r24, 0x01	; 1
- 494:	03 de       	rcall	.-1018   	; 0x9c <I2C_Read>
- 496:	8d 83       	std	Y+5, r24	; 0x05
+ 488:	81 e0       	ldi	r24, 0x01	; 1
+ 48a:	08 de       	rcall	.-1008   	; 0x9c <I2C_Read>
+ 48c:	8d 83       	std	Y+5, r24	; 0x05
     rtc->year =I2C_Read(0);             // read Year and return Negative/No ACK
- 498:	80 e0       	ldi	r24, 0x00	; 0
- 49a:	00 de       	rcall	.-1024   	; 0x9c <I2C_Read>
- 49c:	8e 83       	std	Y+6, r24	; 0x06
+ 48e:	80 e0       	ldi	r24, 0x00	; 0
+ 490:	05 de       	rcall	.-1014   	; 0x9c <I2C_Read>
+ 492:	8e 83       	std	Y+6, r24	; 0x06
 
     I2C_Stop();                              // Stop I2C communication after reading the Date
- 49e:	f1 dd       	rcall	.-1054   	; 0x82 <I2C_Stop>
+ 494:	f6 dd       	rcall	.-1044   	; 0x82 <I2C_Stop>
 }
- 4a0:	df 91       	pop	r29
- 4a2:	cf 91       	pop	r28
- 4a4:	08 95       	ret
+ 496:	df 91       	pop	r29
+ 498:	cf 91       	pop	r28
+ 49a:	08 95       	ret
 
-000004a6 <_exit>:
- 4a6:	f8 94       	cli
+0000049c <_exit>:
+ 49c:	f8 94       	cli
 
-000004a8 <__stop_program>:
- 4a8:	ff cf       	rjmp	.-2      	; 0x4a8 <__stop_program>
+0000049e <__stop_program>:
+ 49e:	ff cf       	rjmp	.-2      	; 0x49e <__stop_program>

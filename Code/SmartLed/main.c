@@ -1,6 +1,7 @@
 #include <avr/io.h>
 #include "rtc.h"
 #include <util/delay.h>
+#include <avr/wdt.h>
 
 //Macros
 #define bit_is_low(sfr,bit)(!(_SFR_BYTE(sfr) & _BV(bit)))
@@ -37,10 +38,12 @@ int main()
 	rtc_t rtc;
 	RTC_Init();
 	initPorts();
+	wdt_enable(WDTO_2S);
 	//setRtcTime(rtc);
 	
 	while(1)
 	{
+		wdt_reset();
 		RTC_GetDateTime(&rtc);
 		checkShowTimeButton(rtc);
 
@@ -206,6 +209,7 @@ void blinkAccordingToHourNumber(rtc_t rtc)
 
 	for( i = 0x00 ; i < hourNum ; i = i + 0x01)
 	{
+		wdt_reset();
 		if(i == 0x0A || i == 0x0B || i == 0x0C || i == 0x0D || i == 0x0E || i == 0x0F ||
 		i == 0x1A || i == 0x1B || i == 0x1C || i == 0x1D || i == 0x1E || i == 0x1F)
 		{
@@ -213,6 +217,7 @@ void blinkAccordingToHourNumber(rtc_t rtc)
 		}
 		PORTB = PORTB | 0b00010000;
 		_delay_ms(30);
+		wdt_reset();
 		PORTB = PORTB & 0b11101111;
 		_delay_ms(40);
 	}
@@ -249,8 +254,10 @@ void blinkAccordingToHourNumber(rtc_t rtc)
 
 	for( i = 0x00 ; i < minNum ; i = i + 0x01)
 	{
+		wdt_reset();
 		PORTB = PORTB | 0b00010000;
 		_delay_ms(20);
+		wdt_reset();
 		PORTB = PORTB & 0b11101111;
 		_delay_ms(30);
 	}

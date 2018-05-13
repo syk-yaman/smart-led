@@ -268,7 +268,7 @@ int isActiveTime(rtc_t rtc){
 	{
 		if(rtc.hour>=0x12)
 		{
-			if(rtc.hour <= 0x17)
+			if(rtc.hour <= 0x18)
 			{
 				return 1;
 			}

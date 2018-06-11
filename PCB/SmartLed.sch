@@ -17267,6 +17267,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="P+12" library="supply1" deviceset="+5V" device=""/>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X2" device=""/>
+<part name="JP3" library="pinhead" deviceset="PINHD-1X2" device=""/>
+<part name="GND18" library="supply1" deviceset="GND" device=""/>
+<part name="P+13" library="supply1" deviceset="+5V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17354,6 +17357,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="P+12" gate="1" x="35.56" y="109.22"/>
 <instance part="GND17" gate="1" x="35.56" y="91.44"/>
 <instance part="JP1" gate="G$1" x="134.62" y="35.56"/>
+<instance part="JP3" gate="G$1" x="-68.58" y="88.9"/>
+<instance part="GND18" gate="1" x="-81.28" y="78.74"/>
+<instance part="P+13" gate="1" x="-81.28" y="99.06"/>
 </instances>
 <busses>
 </busses>
@@ -17505,6 +17511,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="JP3-PIR" gate="A" pin="3"/>
 <wire x1="35.56" y1="101.6" x2="25.4" y2="101.6" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="P+13" gate="1" pin="+5V"/>
+<wire x1="-81.28" y1="96.52" x2="-81.28" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="JP3" gate="G$1" pin="1"/>
+<wire x1="-81.28" y1="91.44" x2="-71.12" y2="91.44" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -17634,6 +17646,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="35.56" y1="93.98" x2="35.56" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="JP3-PIR" gate="A" pin="1"/>
 <wire x1="35.56" y1="96.52" x2="25.4" y2="96.52" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="JP3" gate="G$1" pin="2"/>
+<pinref part="GND18" gate="1" pin="GND"/>
+<wire x1="-71.12" y1="88.9" x2="-81.28" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="-81.28" y1="88.9" x2="-81.28" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$12" class="0">

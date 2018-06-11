@@ -2283,6 +2283,7 @@ design rules under a new name.</description>
 <element name="IC1" library="v-reg" package="79XXL" value="" x="3.175" y="75.946" rot="R180"/>
 <element name="JP3-PIR" library="pinhead" package="1X03" value="" x="37.846" y="74.93" rot="R180"/>
 <element name="JP1" library="pinhead" package="1X02" value="" x="30.734" y="74.93" rot="R180"/>
+<element name="JP3" library="pinhead" package="1X02" value="" x="0.508" y="87.122" rot="R90"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -2322,6 +2323,7 @@ design rules under a new name.</description>
 <contactref element="C5" pad="-"/>
 <contactref element="IC1" pad="GND"/>
 <contactref element="JP3-PIR" pad="1"/>
+<contactref element="JP3" pad="2"/>
 <wire x1="55.3466" y1="75.2348" x2="62.7126" y2="75.2348" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="AVCC">
@@ -2493,6 +2495,9 @@ design rules under a new name.</description>
 <wire x1="35.306" y1="80.01" x2="35.306" y2="74.93" width="0.6096" layer="16"/>
 <wire x1="68.834" y1="55.372" x2="68.834" y2="52.832" width="0.6096" layer="16"/>
 <wire x1="68.834" y1="52.832" x2="68.072" y2="52.07" width="0.6096" layer="16"/>
+<contactref element="JP3" pad="1"/>
+<wire x1="0.508" y1="85.852" x2="0.635" y2="85.852" width="0.6096" layer="16"/>
+<wire x1="0.635" y1="85.852" x2="0.635" y2="79.756" width="0.6096" layer="16"/>
 </signal>
 <signal name="N$12">
 <contactref element="R3" pad="2"/>

@@ -15997,82 +15997,6 @@ Siemens, Hewlett-Packard, Texas Instuments, Sharp, Motorola&lt;p&gt;
 <description>&lt;b&gt;Pin Header Connectors&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
-<package name="1X04">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="0" y1="0.635" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="1.27" x2="1.905" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="1.905" y1="1.27" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="0.635" x2="2.54" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="-0.635" x2="1.905" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="1.905" y1="-1.27" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="-1.27" x2="0" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="-4.445" y1="1.27" x2="-3.175" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="-3.175" y1="1.27" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="0.635" x2="-2.54" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-0.635" x2="-3.175" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="0.635" x2="-1.905" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="-1.905" y1="1.27" x2="-0.635" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="1.27" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="0" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="-1.27" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-1.905" y1="-1.27" x2="-2.54" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="-5.08" y1="0.635" x2="-5.08" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="-4.445" y1="1.27" x2="-5.08" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-5.08" y1="-0.635" x2="-4.445" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-3.175" y1="-1.27" x2="-4.445" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="3.175" y1="1.27" x2="4.445" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="4.445" y1="1.27" x2="5.08" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="5.08" y1="0.635" x2="5.08" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="5.08" y1="-0.635" x2="4.445" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="3.175" y1="1.27" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="-0.635" x2="3.175" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="4.445" y1="-1.27" x2="3.175" y2="-1.27" width="0.1524" layer="21"/>
-<pad name="1" x="-3.81" y="0" drill="1.016" shape="long" rot="R90"/>
-<pad name="2" x="-1.27" y="0" drill="1.016" shape="long" rot="R90"/>
-<pad name="3" x="1.27" y="0" drill="1.016" shape="long" rot="R90"/>
-<pad name="4" x="3.81" y="0" drill="1.016" shape="long" rot="R90"/>
-<text x="-5.1562" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-5.08" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
-<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
-<rectangle x1="-4.064" y1="-0.254" x2="-3.556" y2="0.254" layer="51"/>
-<rectangle x1="3.556" y1="-0.254" x2="4.064" y2="0.254" layer="51"/>
-</package>
-<package name="1X04/90">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-5.08" y1="-1.905" x2="-2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-1.905" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="0.635" x2="-5.08" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-5.08" y1="0.635" x2="-5.08" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="-3.81" y1="6.985" x2="-3.81" y2="1.27" width="0.762" layer="21"/>
-<wire x1="-2.54" y1="-1.905" x2="0" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="0" y1="-1.905" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="6.985" x2="-1.27" y2="1.27" width="0.762" layer="21"/>
-<wire x1="0" y1="-1.905" x2="2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="-1.905" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="0.635" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="6.985" x2="1.27" y2="1.27" width="0.762" layer="21"/>
-<wire x1="2.54" y1="-1.905" x2="5.08" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="5.08" y1="-1.905" x2="5.08" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="5.08" y1="0.635" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="3.81" y1="6.985" x2="3.81" y2="1.27" width="0.762" layer="21"/>
-<pad name="1" x="-3.81" y="-3.81" drill="1.016" shape="long" rot="R90"/>
-<pad name="2" x="-1.27" y="-3.81" drill="1.016" shape="long" rot="R90"/>
-<pad name="3" x="1.27" y="-3.81" drill="1.016" shape="long" rot="R90"/>
-<pad name="4" x="3.81" y="-3.81" drill="1.016" shape="long" rot="R90"/>
-<text x="-5.715" y="-3.81" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-<text x="6.985" y="-4.445" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<rectangle x1="-4.191" y1="0.635" x2="-3.429" y2="1.143" layer="21"/>
-<rectangle x1="-1.651" y1="0.635" x2="-0.889" y2="1.143" layer="21"/>
-<rectangle x1="0.889" y1="0.635" x2="1.651" y2="1.143" layer="21"/>
-<rectangle x1="3.429" y1="0.635" x2="4.191" y2="1.143" layer="21"/>
-<rectangle x1="-4.191" y1="-2.921" x2="-3.429" y2="-1.905" layer="21"/>
-<rectangle x1="-1.651" y1="-2.921" x2="-0.889" y2="-1.905" layer="21"/>
-<rectangle x1="0.889" y1="-2.921" x2="1.651" y2="-1.905" layer="21"/>
-<rectangle x1="3.429" y1="-2.921" x2="4.191" y2="-1.905" layer="21"/>
-</package>
 <package name="1X03">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
 <wire x1="-3.175" y1="1.27" x2="-1.905" y2="1.27" width="0.1524" layer="21"/>
@@ -16179,18 +16103,6 @@ Siemens, Hewlett-Packard, Texas Instuments, Sharp, Motorola&lt;p&gt;
 </package>
 </packages>
 <symbols>
-<symbol name="PINHD4">
-<wire x1="-6.35" y1="-5.08" x2="1.27" y2="-5.08" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="-5.08" x2="1.27" y2="7.62" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="7.62" x2="-6.35" y2="7.62" width="0.4064" layer="94"/>
-<wire x1="-6.35" y1="7.62" x2="-6.35" y2="-5.08" width="0.4064" layer="94"/>
-<text x="-6.35" y="8.255" size="1.778" layer="95">&gt;NAME</text>
-<text x="-6.35" y="-7.62" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="1" x="-2.54" y="5.08" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="2" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="3" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="4" x="-2.54" y="-2.54" visible="pad" length="short" direction="pas" function="dot"/>
-</symbol>
 <symbol name="PINHD3">
 <wire x1="-6.35" y1="-5.08" x2="1.27" y2="-5.08" width="0.4064" layer="94"/>
 <wire x1="1.27" y1="-5.08" x2="1.27" y2="5.08" width="0.4064" layer="94"/>
@@ -16214,36 +16126,6 @@ Siemens, Hewlett-Packard, Texas Instuments, Sharp, Motorola&lt;p&gt;
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="PINHD-1X4" prefix="JP" uservalue="yes">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<gates>
-<gate name="A" symbol="PINHD4" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="1X04">
-<connects>
-<connect gate="A" pin="1" pad="1"/>
-<connect gate="A" pin="2" pad="2"/>
-<connect gate="A" pin="3" pad="3"/>
-<connect gate="A" pin="4" pad="4"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="/90" package="1X04/90">
-<connects>
-<connect gate="A" pin="1" pad="1"/>
-<connect gate="A" pin="2" pad="2"/>
-<connect gate="A" pin="3" pad="3"/>
-<connect gate="A" pin="4" pad="4"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="PINHD-1X3" prefix="JP" uservalue="yes">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
 <gates>
@@ -17176,6 +17058,109 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
+<library name="LDR">
+<packages>
+<package name="LDR_OFFBOARD">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt; for Off-Board LDR</description>
+<wire x1="-2.54" y1="1.27" x2="-2.54" y2="-1.27" width="0.254" layer="21"/>
+<wire x1="2.54" y1="-1.27" x2="-2.54" y2="-1.27" width="0.254" layer="21"/>
+<wire x1="-2.54" y1="1.27" x2="0" y2="1.27" width="0.254" layer="21"/>
+<wire x1="0" y1="1.27" x2="2.54" y2="1.27" width="0.254" layer="21"/>
+<wire x1="2.54" y1="1.27" x2="2.54" y2="-1.27" width="0.254" layer="21"/>
+<wire x1="0" y1="1.27" x2="0" y2="-1.27" width="0.254" layer="21"/>
+<pad name="1" x="-1.27" y="0" drill="1.016" rot="R90"/>
+<pad name="2" x="1.27" y="0" drill="1.016" rot="R90"/>
+<text x="-2.6162" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
+<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
+</package>
+<package name="LDR_OFFBOARD2">
+<wire x1="-2" y1="-2" x2="4" y2="-2" width="0.127" layer="21"/>
+<wire x1="4" y1="-2" x2="4" y2="2.5" width="0.127" layer="21"/>
+<wire x1="-2" y1="-2" x2="-2" y2="2.5" width="0.127" layer="21"/>
+<wire x1="-2" y1="2.5" x2="4" y2="2.5" width="0.127" layer="21"/>
+<pad name="+" x="2" y="0" drill="0.8128" shape="square"/>
+<pad name="-" x="0" y="0" drill="0.8128"/>
+<text x="-2" y="-3.5" size="1.27" layer="25">&gt;NAME</text>
+<rectangle x1="0.5" y1="-2" x2="1.5" y2="-1.5" layer="21"/>
+</package>
+<package name="ON_BOARD">
+<pad name="1" x="-1.27" y="0" drill="0.9"/>
+<pad name="2" x="1.27" y="0" drill="0.9"/>
+<wire x1="-0.5" y1="2" x2="0.5" y2="2" width="0.127" layer="21"/>
+<wire x1="0.5" y1="2" x2="2.5" y2="0" width="0.127" layer="21" curve="-90"/>
+<wire x1="2.5" y1="0" x2="0.5" y2="-2" width="0.127" layer="21" curve="-90"/>
+<wire x1="0.5" y1="-2" x2="-0.5" y2="-2" width="0.127" layer="21"/>
+<wire x1="-0.5" y1="-2" x2="-2.5" y2="0" width="0.127" layer="21" curve="-90"/>
+<wire x1="-2.5" y1="0" x2="-0.5" y2="2" width="0.127" layer="21" curve="-90"/>
+<text x="-2.54" y="2.54" size="1.016" layer="21" ratio="18">&gt;NAME</text>
+</package>
+</packages>
+<symbols>
+<symbol name="PHOTOCELL">
+<wire x1="2.54" y1="-2.54" x2="1.524" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="1.524" y1="-2.54" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="-1.524" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-1.524" y1="2.54" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="2.54" width="0.254" layer="94" curve="-180"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94" curve="-180"/>
+<wire x1="-1.524" y1="2.54" x2="-1.524" y2="2.032" width="0.254" layer="94"/>
+<wire x1="-1.524" y1="2.032" x2="-1.016" y2="1.524" width="0.254" layer="94" curve="90"/>
+<wire x1="-1.016" y1="1.524" x2="1.27" y2="1.524" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.524" x2="1.27" y2="0.762" width="0.254" layer="94" curve="-180"/>
+<wire x1="-1.27" y1="0.762" x2="1.27" y2="0.762" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="0" x2="-1.27" y2="0.762" width="0.254" layer="94" curve="-180"/>
+<wire x1="-1.27" y1="0" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="-0.762" width="0.254" layer="94" curve="-180"/>
+<wire x1="-1.27" y1="-0.762" x2="1.27" y2="-0.762" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="-1.524" x2="-1.27" y2="-0.762" width="0.254" layer="94" curve="-180"/>
+<wire x1="-1.27" y1="-1.524" x2="1.016" y2="-1.524" width="0.254" layer="94"/>
+<wire x1="1.524" y1="-2.032" x2="1.016" y2="-1.524" width="0.254" layer="94" curve="90"/>
+<wire x1="1.524" y1="-2.032" x2="1.524" y2="-2.54" width="0.254" layer="94"/>
+<text x="-5.08" y="3.048" size="1.778" layer="95">&gt;Name</text>
+<text x="-5.08" y="-5.08" size="1.778" layer="96">&gt;Value</text>
+<pin name="P$1" x="-7.62" y="0" visible="off" length="short"/>
+<pin name="P$2" x="7.62" y="0" visible="off" length="short" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="PHOTOCELL" prefix="R">
+<description>&lt;B&gt;Photo Resitor&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="PHOTOCELL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="1" package="LDR_OFFBOARD">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="JST" package="LDR_OFFBOARD2">
+<connects>
+<connect gate="G$1" pin="P$1" pad="+"/>
+<connect gate="G$1" pin="P$2" pad="-"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="ONB" package="ON_BOARD">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -17259,7 +17244,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R1" library="rcl" deviceset="R-EU_" device="0207/10" value="10k"/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
 <part name="P+10" library="supply1" deviceset="+5V" device=""/>
-<part name="JP2" library="pinhead" deviceset="PINHD-1X4" device=""/>
 <part name="P+11" library="supply1" deviceset="+5V" device=""/>
 <part name="Q2" library="crystal" deviceset="CRYSTAL" device="TC26V" value="32.768khz"/>
 <part name="JP3-PIR" library="pinhead" deviceset="PINHD-1X3" device=""/>
@@ -17270,6 +17254,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
 <part name="P+13" library="supply1" deviceset="+5V" device=""/>
 <part name="IC1" library="v-reg" deviceset="78XXL" device=""/>
+<part name="R9" library="rcl" deviceset="R-EU_" device="0207/10" value="10k"/>
+<part name="P+14" library="supply1" deviceset="+5V" device=""/>
+<part name="GND19" library="supply1" deviceset="GND" device=""/>
+<part name="R6-LDR" library="LDR" deviceset="PHOTOCELL" device="1"/>
+<part name="JP2" library="pinhead" deviceset="PINHD-1X2" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17349,7 +17338,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="R1" gate="G$1" x="68.58" y="165.1" rot="R90"/>
 <instance part="GND16" gate="1" x="81.28" y="149.86" rot="R90"/>
 <instance part="P+10" gate="1" x="83.82" y="139.7" rot="R270"/>
-<instance part="JP2" gate="A" x="101.6" y="116.84"/>
 <instance part="P+11" gate="1" x="68.58" y="177.8"/>
 <instance part="Q2" gate="G$1" x="182.88" y="154.94" rot="R90"/>
 <instance part="JP3-PIR" gate="A" x="22.86" y="99.06" rot="R180"/>
@@ -17360,6 +17348,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="GND18" gate="1" x="-81.28" y="78.74"/>
 <instance part="P+13" gate="1" x="-81.28" y="99.06"/>
 <instance part="IC1" gate="A" x="-5.08" y="111.76"/>
+<instance part="R9" gate="G$1" x="25.4" y="147.32" rot="R270"/>
+<instance part="P+14" gate="1" x="25.4" y="160.02"/>
+<instance part="GND19" gate="1" x="25.4" y="109.22"/>
+<instance part="R6-LDR" gate="G$1" x="25.4" y="129.54" rot="R90"/>
+<instance part="JP2" gate="G$1" x="99.06" y="114.3"/>
 </instances>
 <busses>
 </busses>
@@ -17517,6 +17510,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="JP3" gate="G$1" pin="1"/>
 <wire x1="-81.28" y1="91.44" x2="-71.12" y2="91.44" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="P+14" gate="1" pin="+5V"/>
+<pinref part="R9" gate="G$1" pin="1"/>
+<wire x1="25.4" y1="157.48" x2="25.4" y2="152.4" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -17652,6 +17650,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="GND18" gate="1" pin="GND"/>
 <wire x1="-71.12" y1="88.9" x2="-81.28" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="-81.28" y1="88.9" x2="-81.28" y2="81.28" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R6-LDR" gate="G$1" pin="P$1"/>
+<wire x1="25.4" y1="121.92" x2="25.4" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="GND19" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="N$12" class="0">
@@ -17908,17 +17911,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="132.08" y1="35.56" x2="119.38" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$40" class="0">
-<segment>
-<pinref part="IC3" gate="G$1" pin="PB5(SCK)"/>
-<wire x1="91.44" y1="58.42" x2="104.14" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="58.42" x2="104.14" y2="129.54" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="129.54" x2="91.44" y2="129.54" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="129.54" x2="91.44" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="JP2" gate="A" pin="1"/>
-<wire x1="99.06" y1="121.92" x2="91.44" y2="121.92" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$44" class="0">
 <segment>
 <pinref part="C4" gate="G$1" pin="2"/>
@@ -17944,28 +17936,20 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="68.58" y1="154.94" x2="68.58" y2="160.02" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$18" class="0">
-<segment>
-<pinref part="JP2" gate="A" pin="2"/>
-<pinref part="IC3" gate="G$1" pin="PC0(ADC0)"/>
-<wire x1="99.06" y1="119.38" x2="93.98" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="119.38" x2="91.44" y2="116.84" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$30" class="0">
 <segment>
-<pinref part="JP2" gate="A" pin="3"/>
 <pinref part="IC3" gate="G$1" pin="PC1(ADC1)"/>
-<wire x1="99.06" y1="116.84" x2="93.98" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="116.84" x2="91.44" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="JP2" gate="G$1" pin="1"/>
+<wire x1="93.98" y1="116.84" x2="96.52" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$34" class="0">
 <segment>
-<pinref part="JP2" gate="A" pin="4"/>
 <pinref part="IC3" gate="G$1" pin="PC2(ADC2)"/>
-<wire x1="99.06" y1="114.3" x2="93.98" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="114.3" x2="91.44" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="JP2" gate="G$1" pin="2"/>
+<wire x1="93.98" y1="114.3" x2="96.52" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$19" class="0">
@@ -17973,6 +17957,19 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="IC3" gate="G$1" pin="PB6(XTAL1/TOSC1)"/>
 <pinref part="JP3-PIR" gate="A" pin="2"/>
 <wire x1="43.18" y1="99.06" x2="25.4" y2="99.06" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$35" class="0">
+<segment>
+<pinref part="R9" gate="G$1" pin="2"/>
+<pinref part="R6-LDR" gate="G$1" pin="P$2"/>
+<wire x1="25.4" y1="142.24" x2="25.4" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="139.7" x2="25.4" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="139.7" x2="40.64" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="139.7" x2="40.64" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="124.46" x2="91.44" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="IC3" gate="G$1" pin="PC0(ADC0)"/>
+<wire x1="91.44" y1="124.46" x2="91.44" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

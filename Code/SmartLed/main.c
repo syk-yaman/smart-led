@@ -291,33 +291,34 @@ void changeOutputLedStatus(int status){
 void changeElectricityInidicator(int status){
 	if(status ==1)
 	{
-		PORTB = PORTB | 0b00000010;
+		PORTB = PORTB & 0b11111101;
 	}
 	else
 	{
-		PORTB = PORTB & 0b11111101;
+		PORTB = PORTB | 0b00000010;
 	}
 }
 
 void changeTimeInidicator(int status){
 	if(status ==1 )
 	{
-		PORTB = PORTB | 0b00000100;
+		PORTB = PORTB & 0b11111011;
 	}
 	else
 	{
-		PORTB = PORTB & 0b11111011;
+		PORTB = PORTB | 0b00000100;
+		
 	}
 }
 
 void changeAutoInidicator(int status){
 	if(status ==1 )
 	{
-		PORTB = PORTB | 0b00001000;
+		PORTB = PORTB & 0b11110111;
 	}
 	else
 	{
-		PORTB = PORTB & 0b11110111;
+		PORTB = PORTB | 0b00001000;
 	}
 }
 

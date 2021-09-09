@@ -152,6 +152,12 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="rc5.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="rc5.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="rtc.c">
       <SubType>compile</SubType>
     </Compile>

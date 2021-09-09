@@ -344,18 +344,6 @@ void initPorts(){
 
 	PORTD = 0b11111110; //enable pull-ups
 
-	//DDRD &= ~(1<<1); // configure PB0 as an input
-	//PORTD |= (1<<1); // enable the pull-up on PB0
-
-	//DDRD &= ~(1 << DDD0);     // Clear the PD0 pin
-	//DDRD &= ~(1 << DDD1);     // Clear the PD1 pin
-	//DDRD &= ~(1 << DDD2);     // Clear the PD2 pin
-	//DDRD &= ~(1 << DDD3);
-	//DDRD &= ~(1 << DDD4);
-	//
-	//PORTD |= (1 << PORTD0);    // turn On the Pull-up
-	//PORTD |= (1 << PORTD1);    // turn On the Pull-up
-	//PORTD |= (1 << PORTD2);    // turn On the Pull-up
-	//PORTD |= (1 << PORTD3);	   // turn On the Pull-up
+	
 	
 }

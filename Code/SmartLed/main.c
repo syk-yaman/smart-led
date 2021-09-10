@@ -1,7 +1,7 @@
 #include <avr/io.h>
-#include "rtc.h"
 #include <util/delay.h>
 #include <avr/wdt.h>
+#include "rtc.h"
 
 //Macros
 #define bit_is_low(sfr,bit)(!(_SFR_BYTE(sfr) & _BV(bit)))
@@ -12,7 +12,7 @@ void checkElectricityStatus();
 int isActiveTime(rtc_t rtc);
 void changeOutputLedStatus(int status);
 void changeElectricityInidicator(int status);
-void changeTimeInidicator(int status); 
+void changeTimeInidicator(int status);
 void changeAutoInidicator(int status);
 void setRtcTime(rtc_t rtc);
 void initPorts();
@@ -21,16 +21,34 @@ void checkOnButton();
 void checkOffButton();
 void blinkAccordingToHourNumber(rtc_t rtc);
 void checkShowTimeButton(rtc_t rtc);
+void AddToVoltageHistoryReading(int valueToAdd);
+float GetMeanVoltageReading();
+int ADCsingleREAD(uint8_t adctouse);
+void checkPIRandLDR();
+void checkRC5Receiver();
 
 //Button status
 int manualButtonStatus = 1;
 int turnOnButtonStatus = 1;
 int turnOffButtonStatus = 1;
 int showTimeButtonStatus = 1;
-int electricityStatus = 0;
 
-//Variables
+//General Status
 int isManualControl = 0;
+int electricityStatus = 0;
+int LedStatus = 0;
+
+//RC5 Status
+int PINC3RC5Status = 0;
+int fallingEdgeCountRC5 = 0;
+int modeIndex = 0;
+
+//PIR Status
+int previousPINB6PIRReceive = 0;
+
+//LDR
+int lastFiveValues[5];
+int LDR_THRESHOLD = 300;
 
 int main()
 {
@@ -44,6 +62,8 @@ int main()
 	while(1)
 	{
 		wdt_reset();
+		checkRC5Receiver();
+		checkPIRandLDR();
 		RTC_GetDateTime(&rtc);
 		checkShowTimeButton(rtc);
 
@@ -95,6 +115,107 @@ int main()
 		
 	}
 	return (0);
+}
+
+void checkPIRandLDR(){
+	int valueOfLDR = ADCsingleREAD(0);
+	if(bit_is_high(PINB,6) && previousPINB6PIRReceive == 0) //Rising edge
+	{
+		previousPINB6PIRReceive = 1;
+		if(valueOfLDR > LDR_THRESHOLD && isManualControl == 0){
+			isManualControl = 1;
+			changeOutputLedStatus(1);
+		}
+	}
+	if(bit_is_low(PINB,6) && previousPINB6PIRReceive == 1) //Falling edge
+	{
+		previousPINB6PIRReceive = 0;
+		if(isManualControl == 1){
+			isManualControl = 0;
+			changeOutputLedStatus(0);
+		}
+	}
+	//TODO:
+	//ADC
+	//int valueOfADC = ADCsingleREAD(0);
+	//AddToVoltageHistoryReading(valueOfADC);
+	//float LDRValue = GetMeanVoltageReading();
+}
+
+// NOTE: this is just a stupid receiver, it can only know if a button was pressed without specifying which one.
+// To add this capability, the PCB should be updated to use interrupts with the infrared receiver
+void checkRC5Receiver() {
+	if(bit_is_low(PINC,3) && PINC3RC5Status == 1) //Falling edge
+	{
+		PINC3RC5Status = 0;
+		fallingEdgeCountRC5++;
+		
+		if(fallingEdgeCountRC5>15){
+			fallingEdgeCountRC5 = 0;
+			
+			if (modeIndex == 0){
+				isManualControl = 1;
+				changeOutputLedStatus(1);
+				modeIndex = 1;
+			}
+			else if(modeIndex == 1)
+			{
+				isManualControl = 1;
+				changeOutputLedStatus(0);
+				modeIndex = 2;
+			}
+			else {
+				isManualControl = 0;
+				modeIndex = 0;
+			}
+		}
+	}
+	
+	if(bit_is_high(PINC,3) && PINC3RC5Status == 0) //Rising edge
+	{
+		PINC3RC5Status = 1;
+	}
+}
+int ADCsingleREAD(uint8_t adctouse)
+{
+	int ADCval;
+
+	ADMUX = adctouse;         // use #1 ADC
+	ADMUX |= ( (0<<REFS1) | (1<<REFS0) );    // use AVcc as the reference
+	ADMUX &= ~(1 << ADLAR);   // clear for 10 bit resolution
+	
+	ADCSRA |= (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0);    // 128 prescale for 8Mhz
+	ADCSRA |= (1 << ADEN);    // Enable the ADC
+
+	ADCSRA |= (1 << ADSC);    // Start the ADC conversion
+
+	while(ADCSRA & (1 << ADSC));      // Thanks T, this line waits for the ADC to finish
+
+
+	ADCval = ADCL;
+	ADCval = (ADCH << 8) + ADCval;    // ADCH is read so ADC can be updated again
+
+	return ADCval;
+}
+
+float GetMeanVoltageReading(){
+	int historySize = 0, arraySize = 5;
+	float sum = 0;
+	for(int i = 0 ; i < arraySize; i++){
+		if(lastFiveValues[i]){
+			sum = sum + lastFiveValues[i];
+			historySize++;
+		}
+	}
+	return sum/historySize;
+}
+
+void AddToVoltageHistoryReading(int valueToAdd){
+	lastFiveValues[4] = lastFiveValues[3];
+	lastFiveValues[3] = lastFiveValues[2];
+	lastFiveValues[2] = lastFiveValues[1];
+	lastFiveValues[1] = lastFiveValues[0];
+	lastFiveValues[0] = valueToAdd;
 }
 
 void checkManualButton()
@@ -266,7 +387,7 @@ void blinkAccordingToHourNumber(rtc_t rtc)
 int isActiveTime(rtc_t rtc){
 	if(rtc.weekDay != 5) //Not Friday
 	{
-		if(rtc.hour>=0x12)
+		if(rtc.hour>=0x04)
 		{
 			if(rtc.hour <= 0x18)
 			{
@@ -274,17 +395,21 @@ int isActiveTime(rtc_t rtc){
 			}
 		}
 	}
-	return 0;
+	//TODO: Fix this hard-coded return value
+	//PAY ATENTION: THIS IS HARD-CODED AFTER V3
+	return 1; 
 }
 
 void changeOutputLedStatus(int status){
 	if(status ==1)
 	{
 		PORTB = PORTB | 0b00000001;
+		LedStatus = 1;
 	}
 	else
 	{
 		PORTB = PORTB & 0b11111110;
+		LedStatus = 0;
 	}
 }
 
@@ -323,14 +448,14 @@ void changeAutoInidicator(int status){
 }
 
 void setRtcTime(rtc_t rtc){
-	rtc.hour = 0x12; //  10:40:20 am
-	rtc.min =  0x02;
+	rtc.hour = 0x03; //  10:40:20 am
+	rtc.min =  0x51;
 	rtc.sec =  0x00;
 
-	rtc.date = 0x25; //1st Jan 2016
-	rtc.month = 0x04;
-	rtc.year = 0x18;
-	rtc.weekDay = 3;
+	rtc.date = 0x07; //1st Jan 2016
+	rtc.month = 0x09;
+	rtc.year = 0x21;
+	rtc.weekDay = 2;
 	
 	// Friday: 5th day of week considering monday as first day.
 	/*##### Set the time and Date only once. Once the Time and Date is set, comment these lines
@@ -339,11 +464,9 @@ void setRtcTime(rtc_t rtc){
 }
 
 void initPorts(){
+	DDRC = DDRC & 0b11111110; // Set PIN C.0 to input
 	DDRD = 0x00; // Set PORT D to input
-	DDRB = 0xFF; // Set PORT B to output
+	DDRB = 0xBF; // Set PORT B to output except PB.6
 
 	PORTD = 0b11111110; //enable pull-ups
-
-	
-	
 }

@@ -48,7 +48,7 @@ int previousPINB6PIRReceive = 0;
 
 //LDR
 int lastFiveValues[5];
-int LDR_THRESHOLD = 300;
+int LDR_THRESHOLD = 400;
 
 int main()
 {
@@ -176,6 +176,7 @@ void checkRC5Receiver() {
 		PINC3RC5Status = 1;
 	}
 }
+
 int ADCsingleREAD(uint8_t adctouse)
 {
 	int ADCval;
@@ -323,8 +324,6 @@ void checkElectricityStatus(){
 
 void blinkAccordingToHourNumber(rtc_t rtc)
 {
-
-	
 	uint8_t hourNum = rtc.hour;
 	uint8_t i = 0x00;
 

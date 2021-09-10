@@ -1,17 +1,16 @@
 # Smart LED
 
-AVR board to control home lighting autonomously.
-It provides automatic control of LED lighting (12vdc) according to:
+An AVR board to control home lighting autonomously. It provides automatic control of LED lighting (12vdc) according to:
 
-* Time schedule: active during daily work time except holidays.
+* Time schedule: active during daily work time except for holidays.
 * People movement: turning on lighting automatically when sensing movement using a PIR extension.
-* Electric supply status: provides auxiliary lighting when needed (in case of power outage).
-* Illumination level sensing: no need to turn on the lighting when there is enough lightning.
+* Electric supply status: provides auxiliary lighting when needed (in case of a power outage).
+* Illumination level sensing: no need to turn on the lighting when there is enough lighting.
 
 Also providing manual control:
 
-* Directly using on-board buttons.
-* Remotely using infrared remote control (RC5 based).
+- Directly using onboard buttons.
+- Remotely using an infrared remote control (RC5 based).
 
 ![Cover](https://raw.githubusercontent.com/syk-yaman/smart-led/master/PCB/cover.jpg)
 
@@ -54,7 +53,7 @@ Required tools:
 
 ## License
 
-###### This project is under MIT License
+###### The software side is licensed under MIT License
 
 ```
 MIT License
@@ -79,3 +78,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+###### The hardware side is licensed under CERN License
+
+```
+This documentation describes Open Hardware and is licensed under the CERN OHL v. 1.2.
+
+You may redistribute and modify this documentation under the terms of the CERN OHL v.1.2. (http://ohwr.org/cernohl). This documentation is distributed WITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN OHL v.1.2 for applicable conditions
+```
+
